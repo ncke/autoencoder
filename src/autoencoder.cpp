@@ -3,52 +3,64 @@
 
 using namespace std;
 
-class Neuron {
+class BaseNeuron {
+public:
+	void load(double value);
+	void add(double value);
+	double getOutput();
 
-	private:
-
-	double sum;
-
-	double sigmoid(double x) {
-		double ex = exp(x);
-		return ex / (ex + 1.0);
-	}
-
-	public:
-
-	void reset() {
-		sum = 0.0;
-	}
-
-	void addInput(double input) {
-		sum += input;
-	}
-
-	double getOutput() {
-		return sigmoid(sum);
-	}
-
+private:
+	double ivalue;
+	double ovalue;
 };
 
-class Layer {
+void BaseNeuron::load(double value) {
+	ivalue = value;
+	ovalue = value;
+}
 
-	private:
+void BaseNeuron::add(double value) {
+	ivalue += value;
+}
 
-	Neuron *neurons;
+double BaseNeuron::getOutput() {
+	return ovalue;
+}
 
-	public:
+class InterfaceNeuron: BaseNeuron {};
 
-	Layer(int neuronCount) {
-		neurons = new Neuron[neuronCount];
-		for ( int n = 0; n < neuronCount; n++ ) {
-			neurons[n] = Neuron();	
-		}
-	}
+class ComputeNeuron: BaseNeuron {
+public:
+	void reset();
+	void compute();
 
+private:
+	double sigmoid(double x);
+};
+
+double ComputeNeuron::sigmoid(double x) {
+	double ex = exp(ex);
+	return ex / (ex + 1.0);
+}
+
+void ComputeNeuron::reset() {
+	load(0.0);
+}
+
+void ComputeNeuron::compute() {
+	auto result = sigmoid(sum);
+	load(result);
+}
+
+class Autoencoder {
+public:
+	Autoencoder(int sizes[]); 
+	
+private:
+	int *architecture;
 };
 
 int main() {
   cout << "autoencoder" << endl;
 
-	Layer layer = Layer(20);
 }
