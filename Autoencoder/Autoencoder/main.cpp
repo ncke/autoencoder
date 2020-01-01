@@ -7,9 +7,16 @@
 //
 
 #include <iostream>
+#include <vector>
+#include "Autoencoder.hpp"
+
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    
+    // Simple autoencoder.
+    vector<int> architecture = { 10, 5, 10 };
+    Autoencoder autoencoder = Autoencoder(architecture);
+    
+    
 }

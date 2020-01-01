@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		01116BAA23BCA34200255C4C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BA923BCA34200255C4C /* main.cpp */; };
+		01116BB223BCA56D00255C4C /* Autoencoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BB023BCA56D00255C4C /* Autoencoder.cpp */; };
+		01116BB623BCA9AD00255C4C /* Neuron.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BB423BCA9AD00255C4C /* Neuron.cpp */; };
+		01116BB923BCAEAD00255C4C /* Connections.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BB723BCAEAD00255C4C /* Connections.cpp */; };
+		01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BBA23BCB29A00255C4C /* Randomization.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		01116BA623BCA34200255C4C /* Autoencoder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Autoencoder; sourceTree = BUILT_PRODUCTS_DIR; };
 		01116BA923BCA34200255C4C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		01116BB023BCA56D00255C4C /* Autoencoder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Autoencoder.cpp; sourceTree = "<group>"; };
+		01116BB123BCA56D00255C4C /* Autoencoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Autoencoder.hpp; sourceTree = "<group>"; };
+		01116BB423BCA9AD00255C4C /* Neuron.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Neuron.cpp; sourceTree = "<group>"; };
+		01116BB523BCA9AD00255C4C /* Neuron.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Neuron.hpp; sourceTree = "<group>"; };
+		01116BB723BCAEAD00255C4C /* Connections.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Connections.cpp; sourceTree = "<group>"; };
+		01116BB823BCAEAD00255C4C /* Connections.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Connections.hpp; sourceTree = "<group>"; };
+		01116BBA23BCB29A00255C4C /* Randomization.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Randomization.cpp; sourceTree = "<group>"; };
+		01116BBB23BCB29A00255C4C /* Randomization.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Randomization.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +69,23 @@
 		01116BA823BCA34200255C4C /* Autoencoder */ = {
 			isa = PBXGroup;
 			children = (
+				01116BB323BCA98000255C4C /* Autoencoder */,
 				01116BA923BCA34200255C4C /* main.cpp */,
+			);
+			path = Autoencoder;
+			sourceTree = "<group>";
+		};
+		01116BB323BCA98000255C4C /* Autoencoder */ = {
+			isa = PBXGroup;
+			children = (
+				01116BB023BCA56D00255C4C /* Autoencoder.cpp */,
+				01116BB123BCA56D00255C4C /* Autoencoder.hpp */,
+				01116BB423BCA9AD00255C4C /* Neuron.cpp */,
+				01116BB523BCA9AD00255C4C /* Neuron.hpp */,
+				01116BB723BCAEAD00255C4C /* Connections.cpp */,
+				01116BB823BCAEAD00255C4C /* Connections.hpp */,
+				01116BBA23BCB29A00255C4C /* Randomization.cpp */,
+				01116BBB23BCB29A00255C4C /* Randomization.hpp */,
 			);
 			path = Autoencoder;
 			sourceTree = "<group>";
@@ -120,6 +148,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				01116BAA23BCA34200255C4C /* main.cpp in Sources */,
+				01116BB223BCA56D00255C4C /* Autoencoder.cpp in Sources */,
+				01116BB623BCA9AD00255C4C /* Neuron.cpp in Sources */,
+				01116BB923BCAEAD00255C4C /* Connections.cpp in Sources */,
+				01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
