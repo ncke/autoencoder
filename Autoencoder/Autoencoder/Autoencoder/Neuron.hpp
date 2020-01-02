@@ -16,11 +16,16 @@
 class Neuron {
 
 public:
+    // Initialisation and connections.
     Neuron();
     void connectInput(Neuron *origin);
     void connectOutput(Neuron *destination);
     
+    // Helpers.
+    void describe();
+    
 private:
+    double bias;
     Connections connections;
 };
 

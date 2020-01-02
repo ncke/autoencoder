@@ -7,17 +7,18 @@
 //
 
 #include "Neuron.hpp"
+#include "Randomization.hpp"
+#include <iostream>
 
 using namespace std;
 
 // MARK: - Life Cycle
 
 Neuron::Neuron() {
-    // Initialise connections.
+    // Initialise connections and randomize bias.
     connections = Connections();
+    bias = Randomization::random(-1.0, 1.0);
 }
-
-
 
 // MARK: - Connections
 
@@ -29,3 +30,10 @@ void Neuron::connectOutput(Neuron *destination) {
     connections.connect(this, destination);
 }
 
+// MARK: - Helpers
+
+void Neuron::describe() {
+    cout << "------------------- neuron at " << this << endl;
+    cout << "bias: " << bias << endl;
+    connections.describe();
+}

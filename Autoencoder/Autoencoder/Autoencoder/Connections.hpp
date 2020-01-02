@@ -20,11 +20,15 @@ struct WeightedConnection {
 };
 
 class Connections {
-
+    
 public:
+    // Initialisation and making connections.
     Connections();
     void connect(Neuron* origin, Neuron* destination);
     void addInput(Neuron* origin);
+    
+    // Helpers.
+    void describe();
     
 private:
     std::vector<Neuron*> inputs;

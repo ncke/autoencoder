@@ -11,13 +11,19 @@
 
 #include <stdio.h>
 #include <vector>
+#include "Neuron.hpp"
 
 class Autoencoder {
 
 public:
     Autoencoder(std::vector<int> architecture);
-
     
+    void describe();
+
+private:
+    std::vector<Neuron> neurons;
+    std::vector<Neuron> makeLayer(int layerSize);
+    void fullyConnect(Neuron *origin, std::vector<Neuron> *layer);
 };
 
 #endif /* Autoencoder_hpp */

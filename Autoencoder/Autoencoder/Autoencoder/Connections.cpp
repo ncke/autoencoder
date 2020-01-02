@@ -9,6 +9,7 @@
 #include "Connections.hpp"
 #include "Neuron.hpp"
 #include "Randomization.hpp"
+#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -33,4 +34,25 @@ void Connections::connect(Neuron* origin, Neuron* destination) {
 
 void Connections::addInput(Neuron *origin) {
     inputs.push_back(origin);
+}
+
+// MARK: - Helpers
+
+void Connections::describe() {
+    cout << "connections at " << this << endl;
+    
+    // Describe inputs.
+    cout << "input connections (count: " << inputs.size() << ")" << endl;
+    for (auto input: inputs) {
+        cout << "  " << input << endl;
+    }
+    
+    // Describe outputs.
+    cout << "output connections (count: " << outputs.size() << ")" << endl;
+    for (auto output: outputs) {
+        cout
+            << "  " << output.destination
+            << " weight: " << output.weight
+            << endl;
+    }
 }
