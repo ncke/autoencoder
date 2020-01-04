@@ -9,7 +9,11 @@
 #include "Randomization.hpp"
 #include <random>
 
+void Randomization::setSeed(uint seed) {
+    m_generator = std::default_random_engine{ seed };
+}
+
 double Randomization::random(double min, double max) {
     std::uniform_real_distribution<double> distribution(min, max);
-    return distribution(generator);
+    return distribution(m_generator);
 }

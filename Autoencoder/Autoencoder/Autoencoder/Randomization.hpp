@@ -15,13 +15,15 @@
 class Randomization {
     
 public:
+    void setSeed(uint seed);
+    
     double operator ()(double min, double max) {
         return random(min, max);
     }
     
 private:
     double random(double min, double max);
-    std::default_random_engine generator;
+    std::default_random_engine m_generator;
 };
 
 static Randomization randomization;
