@@ -14,6 +14,7 @@
 		01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BBA23BCB29A00255C4C /* Randomization.cpp */; };
 		01116BBF23C0C91A00255C4C /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BBD23C0C91A00255C4C /* Layer.cpp */; };
 		01116BC223C0E80500255C4C /* Mathematics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BC023C0E80500255C4C /* Mathematics.cpp */; };
+		01116BC523C0F86000255C4C /* NeuralNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BC323C0F86000255C4C /* NeuralNetwork.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		01116BBE23C0C91A00255C4C /* Layer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer.hpp; sourceTree = "<group>"; };
 		01116BC023C0E80500255C4C /* Mathematics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mathematics.cpp; sourceTree = "<group>"; };
 		01116BC123C0E80500255C4C /* Mathematics.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mathematics.hpp; sourceTree = "<group>"; };
+		01116BC323C0F86000255C4C /* NeuralNetwork.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NeuralNetwork.cpp; sourceTree = "<group>"; };
+		01116BC423C0F86000255C4C /* NeuralNetwork.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NeuralNetwork.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,16 @@
 			children = (
 				01116BB123BCA56D00255C4C /* Autoencoder.hpp */,
 				01116BB023BCA56D00255C4C /* Autoencoder.cpp */,
+				01116BC623C0F86E00255C4C /* NeuralNetwork */,
+			);
+			path = Autoencoder;
+			sourceTree = "<group>";
+		};
+		01116BC623C0F86E00255C4C /* NeuralNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				01116BC423C0F86000255C4C /* NeuralNetwork.hpp */,
+				01116BC323C0F86000255C4C /* NeuralNetwork.cpp */,
 				01116BBE23C0C91A00255C4C /* Layer.hpp */,
 				01116BBD23C0C91A00255C4C /* Layer.cpp */,
 				01116BB523BCA9AD00255C4C /* Neuron.hpp */,
@@ -94,10 +107,10 @@
 				01116BB723BCAEAD00255C4C /* Connections.cpp */,
 				01116BBB23BCB29A00255C4C /* Randomization.hpp */,
 				01116BBA23BCB29A00255C4C /* Randomization.cpp */,
-				01116BC023C0E80500255C4C /* Mathematics.cpp */,
 				01116BC123C0E80500255C4C /* Mathematics.hpp */,
+				01116BC023C0E80500255C4C /* Mathematics.cpp */,
 			);
-			path = Autoencoder;
+			path = NeuralNetwork;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +173,7 @@
 				01116BAA23BCA34200255C4C /* main.cpp in Sources */,
 				01116BB223BCA56D00255C4C /* Autoencoder.cpp in Sources */,
 				01116BB623BCA9AD00255C4C /* Neuron.cpp in Sources */,
+				01116BC523C0F86000255C4C /* NeuralNetwork.cpp in Sources */,
 				01116BBF23C0C91A00255C4C /* Layer.cpp in Sources */,
 				01116BB923BCAEAD00255C4C /* Connections.cpp in Sources */,
 				01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */,

@@ -9,7 +9,7 @@
 #ifndef Autoencoder_hpp
 #define Autoencoder_hpp
 
-#include "Layer.hpp"
+#include "NeuralNetwork.hpp"
 #include <stdio.h>
 #include <vector>
 
@@ -22,7 +22,7 @@ public:
     void describe() const;
 
 private:
-    std::vector<Layer> m_layers;
+    NeuralNetwork m_network;
 };
 
 #endif /* Autoencoder_hpp */
