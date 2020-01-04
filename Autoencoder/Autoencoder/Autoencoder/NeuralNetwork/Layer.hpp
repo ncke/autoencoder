@@ -13,6 +13,8 @@
 #include "Neuron.hpp"
 #include <vector>
 
+class NeuralNetwork;
+
 class Layer {
     
 public:
@@ -21,9 +23,11 @@ public:
     // Connection.
     void fullyConnect(Layer &forwardLayer);
     
+    // Activation.
+    void activate(NeuralNetwork& neuralNetwork);
+    
     // Getters.
     Neuron getNeuron(size_t index) const;
-    std::vector<Neuron> getNeurons() const;
     
     // Helpers.
     void describe() const;

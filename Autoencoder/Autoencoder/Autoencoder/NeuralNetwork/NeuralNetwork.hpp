@@ -21,6 +21,8 @@ public:
     NeuralNetwork(const std::vector<int>& architecture);
     
     // Activation.
+    void activate();
+    double getActivation(const NeuronHandle& handle) const;
     
     // Helpers.
     void describe() const;
@@ -28,7 +30,7 @@ public:
 private:
     std::vector<Layer> m_layers;
     double totalInput(Neuron& neuron) const;
-    Neuron getNeuron(NeuronHandle& handle) const;
+    Neuron getNeuron(const NeuronHandle& handle) const;
 };
 
 #endif /* NeuralNetwork_hpp */

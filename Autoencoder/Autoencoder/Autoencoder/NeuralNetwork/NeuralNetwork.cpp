@@ -30,9 +30,20 @@ NeuralNetwork::NeuralNetwork(const vector<int>& architecture) {
 
 // MARK: - Activation
 
+void NeuralNetwork::activate() {
+    // Activate each layer.
+    for (auto& layer : m_layers) {
+        layer.activate(*this);
+    }
+}
+
 // MARK: - Getters
 
-Neuron NeuralNetwork::getNeuron(NeuronHandle& handle) const {
+double NeuralNetwork::getActivation(const NeuronHandle& handle) const {
+    return getNeuron(handle).getActivation();
+}
+
+Neuron NeuralNetwork::getNeuron(const NeuronHandle& handle) const {
     return m_layers[handle.layerIndex].getNeuron(handle.neuronIndex);
 }
 

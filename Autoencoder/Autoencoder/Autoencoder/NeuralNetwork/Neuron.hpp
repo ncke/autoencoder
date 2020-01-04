@@ -14,6 +14,8 @@
 #include <vector>
 #include <iostream>
 
+class NeuralNetwork;
+
 class Neuron {
 
 public:
@@ -22,10 +24,9 @@ public:
     
     // Connection.
     void connectInput(const Neuron& otherNeuron);
-    void connectOutput(const Neuron& otherNeuron);
     
     // Activation.
-    void activate(double input);
+    void activate(NeuralNetwork& neuralNetwork);
     
     // Getters.
     NeuronHandle getHandle() const;

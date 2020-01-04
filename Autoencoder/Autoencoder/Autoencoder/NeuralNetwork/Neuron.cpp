@@ -7,6 +7,7 @@
 //
 
 #include "Mathematics.hpp"
+#include "NeuralNetwork.hpp"
 #include "Neuron.hpp"
 #include "Randomization.hpp"
 #include <iostream>
@@ -25,14 +26,17 @@ void Neuron::connectInput(const Neuron& otherNeuron) {
     m_connections.connectInput(otherNeuron);
 }
 
-void Neuron::connectOutput(const Neuron& otherNeuron) {
-    m_connections.connectOutput(otherNeuron);
-}
-
 // MARK: - Activation
 
-void Neuron::activate(double input) {
-    m_activation = sigmoid(input);
+void Neuron::activate(NeuralNetwork& neuralNetwork) {
+    // Total the inputs including the bias weight.
+    double total = m_bias;
+    for (auto& inputConnection : m_connections.getInputConnections()) {
+        total += (neuralNetwork.getActivation(inputConnection.handle) * inputConnection.weight);
+    }
+    
+    // Compute the activation.
+    m_activation = sigmoid(total);
 }
 
 // MARK: - Getters

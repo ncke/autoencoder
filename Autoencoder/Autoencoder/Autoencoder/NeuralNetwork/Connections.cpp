@@ -14,50 +14,40 @@
 
 using namespace std;
 
-Connection::Connection(const Neuron& otherNeuron) : handle{ otherNeuron.getHandle() } {}
+// MARK: - Connection Structure
 
-WeightedConnection::WeightedConnection(const Neuron& otherNeuron) :
-    Connection(otherNeuron), weight{ randomization(-1.0, 1.0) } {}
+Connection::Connection(const Neuron& otherNeuron) :
+    handle{ otherNeuron.getHandle() },
+    weight{ randomization(-1.0, 1.0) } {}
 
-// MARK: - Connect neurons
+// MARK: - Connecting neurons
 
 void Connections::connectInput(const Neuron& otherNeuron) {
     Connection connection{ otherNeuron };
     
-    if (!exists(connection, m_inputs)) {
+    if (!exists(connection)) {
         m_inputs.emplace_back(connection);
     }
 }
 
-void Connections::connectOutput(const Neuron& otherNeuron) {
-    // Create the connection.
-    WeightedConnection connection{ otherNeuron };
-    
-    if (!exists(connection, m_outputs)) {
-        m_outputs.emplace_back(connection);
-    }
+// MARK: - Connection Management
+
+const vector<Connection> Connections::getInputConnections() const {
+    return m_inputs;
 }
 
-// MARK: - Connection Uniquing
-
-bool Connections::exists(const Connection& connection, const std::vector<Connection>connections) const {
-    for (auto existingConnection : connections) {
-        if (connection == existingConnection) {
-            return true;
+const Connection* Connections::find(const NeuronHandle& neuronHandle) const {
+    for (auto& existingConnection : m_inputs) {
+        if (neuronHandle == existingConnection.handle) {
+            return &existingConnection;
         }
     }
     
-    return false;
+    return nullptr;
 }
 
-bool Connections::exists(const Connection& connection, const std::vector<WeightedConnection>connections) const {
-    for (auto existingConnection : connections) {
-        if (connection == existingConnection) {
-            return true;
-        }
-    }
-    
-    return false;
+bool Connections::exists(const Connection& connection) const {
+    return find(connection.handle) != nullptr;
 }
 
 // MARK: - Helpers
@@ -68,15 +58,6 @@ void Connections::describe() const {
         cout << "input: "
              << "(" << connection.handle.layerIndex
              << "," << connection.handle.neuronIndex << ")"
-             << endl;
-    }
-    
-    cout << "output connections (count: " << m_outputs.size() << ")" << endl;
-    for (auto connection: m_outputs) {
-        cout << "output: "
-             << "(" << connection.handle.layerIndex
-             << "," << connection.handle.neuronIndex << ") "
-             << "weight: " << connection.weight
              << endl;
     }
 }

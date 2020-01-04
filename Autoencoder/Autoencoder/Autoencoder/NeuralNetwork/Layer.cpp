@@ -7,6 +7,7 @@
 //
 
 #include "Layer.hpp"
+#include "NeuralNetwork.hpp"
 #include "Neuron.hpp"
 #include <iostream>
 #include <vector>
@@ -21,12 +22,20 @@ Layer::Layer(size_t layerIndex, size_t neuronCount) {
 
 // MARK: - Connection
 
-void Layer::fullyConnect(Layer &forwardLayer) {
+void Layer::fullyConnect(Layer& forwardLayer) {
     for (auto& origin : m_neurons) {
         for (auto& destination : forwardLayer.m_neurons) {
-            origin.connectOutput(destination);
             destination.connectInput(origin);
         }
+    }
+}
+
+// MARK: - Activation
+
+void Layer::activate(NeuralNetwork& neuralNetwork) {
+    // Activate each neuron.
+    for (auto& neuron : m_neurons) {
+        neuron.activate(neuralNetwork);
     }
 }
 
@@ -36,14 +45,10 @@ Neuron Layer::getNeuron(size_t index) const {
     return m_neurons[index];
 }
 
-vector<Neuron> Layer::getNeurons() const {
-    return m_neurons;
-}
-
 // MARK: - Helpers
 
 void Layer::describe() const {
-    cout << "neurons (count: " << m_neurons.size() << ")" << endl;
+    cout << "has " << m_neurons.size() << " neurons" << endl;
     for (auto neuron : m_neurons) {
         neuron.describe();
     }
