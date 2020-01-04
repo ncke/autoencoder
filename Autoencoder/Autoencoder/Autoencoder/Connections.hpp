@@ -9,30 +9,33 @@
 #ifndef Connections_hpp
 #define Connections_hpp
 
-#include <stdio.h>
+#include "Neuron.hpp"
 #include <vector>
 
-class Neuron;
-
-struct WeightedConnection {
-    Neuron *destination;
+struct Connection {
+    NeuronHandle originHandle;
+    NeuronHandle destinationHandle;
     double weight;
+    
+    bool operator==(const Connection &other) const {
+        return this->originHandle == other.originHandle && this->destinationHandle == other.destinationHandle;
+    }
 };
 
 class Connections {
     
 public:
-    // Initialisation and making connections.
-    Connections();
-    void connect(Neuron* origin, Neuron* destination);
-    void addInput(Neuron* origin);
+    void connectInput(const Neuron& input);
+    void connectOutput(const Neuron& origin, const Neuron& destination);
     
     // Helpers.
-    void describe();
+    void describe() const;
     
 private:
-    std::vector<Neuron*> inputs;
-    std::vector<WeightedConnection> outputs;
+    std::vector<NeuronHandle> m_inputs;
+    std::vector<Connection> m_outputs;
+    bool inputExists(const NeuronHandle& inputHandle) const ;
+    bool outputExists(const Connection& outputConnection) const;
 };
 
 #endif /* Connections_hpp */

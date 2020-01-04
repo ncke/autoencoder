@@ -14,26 +14,17 @@ using namespace std;
 
 // MARK: - Life Cycle
 
-Neuron::Neuron() {
-    // Initialise connections and randomize bias.
-    connections = Connections();
-    bias = Randomization::random(-1.0, 1.0);
-}
+Neuron::Neuron(size_t layerIndex, size_t neuronIndex) :
+    m_bias{ randomization(-1.0, 1.0) },
+    m_handle{ layerIndex, neuronIndex } {}
 
-// MARK: - Connections
-
-void Neuron::connectInput(Neuron *origin) {
-    connections.addInput(origin);
-}
-
-void Neuron::connectOutput(Neuron *destination) {
-    connections.connect(this, destination);
+NeuronHandle Neuron::getHandle() const {
+    return m_handle;
 }
 
 // MARK: - Helpers
 
-void Neuron::describe() {
-    cout << "------------------- neuron at " << this << endl;
-    cout << "bias: " << bias << endl;
-    connections.describe();
+void Neuron::describe() const {
+    cout << "neuron: handle(" << m_handle.layerIndex << "," << m_handle.neuronIndex << "), ";
+    cout << "bias: " << m_bias <<  endl;
 }

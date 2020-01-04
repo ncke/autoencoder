@@ -9,21 +9,20 @@
 #ifndef Autoencoder_hpp
 #define Autoencoder_hpp
 
+#include "Layer.hpp"
 #include <stdio.h>
 #include <vector>
-#include "Neuron.hpp"
 
 class Autoencoder {
 
 public:
-    Autoencoder(std::vector<int> architecture);
+    Autoencoder(const std::vector<int>& architecture);
     
-    void describe();
+    // Helpers.
+    void describe() const;
 
 private:
-    std::vector<Neuron> neurons;
-    std::vector<Neuron> makeLayer(int layerSize);
-    void fullyConnect(Neuron *origin, std::vector<Neuron> *layer);
+    std::vector<Layer> m_layers;
 };
 
 #endif /* Autoencoder_hpp */

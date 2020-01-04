@@ -15,10 +15,15 @@
 class Randomization {
     
 public:
-    static double random(double min, double max);
+    double operator ()(double min, double max) {
+        return random(min, max);
+    }
     
 private:
-    
+    double random(double min, double max);
+    std::default_random_engine generator;
 };
+
+static Randomization randomization;
 
 #endif /* Randomization_hpp */

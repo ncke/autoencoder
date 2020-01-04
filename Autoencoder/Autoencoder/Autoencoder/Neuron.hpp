@@ -11,22 +11,32 @@
 
 #include <stdio.h>
 #include <vector>
-#include "Connections.hpp"
+#include <iostream>
+
+struct NeuronHandle {
+    size_t layerIndex;
+    size_t neuronIndex;
+    
+    bool operator==(const NeuronHandle &other) const {
+        return this->layerIndex == other.layerIndex && this->neuronIndex == other.neuronIndex;
+    }
+};
 
 class Neuron {
 
 public:
     // Initialisation and connections.
-    Neuron();
-    void connectInput(Neuron *origin);
-    void connectOutput(Neuron *destination);
+    Neuron(size_t layerIndex, size_t neuronIndex);
     
+    // Getters.
+    NeuronHandle getHandle() const;
+
     // Helpers.
-    void describe();
+    void describe() const;
     
 private:
-    double bias;
-    Connections connections;
+    NeuronHandle m_handle;
+    double m_bias;
 };
 
 #endif /* Neuron_hpp */
