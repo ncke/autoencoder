@@ -30,10 +30,14 @@ void Layer::fullyConnect(Layer &forwardLayer) {
     }
 }
 
-// MARK: - Activation
+// MARK: - Getters
 
-void Layer::activate() {
-    
+Neuron Layer::getNeuron(size_t index) const {
+    return m_neurons[index];
+}
+
+vector<Neuron> Layer::getNeurons() const {
+    return m_neurons;
 }
 
 // MARK: - Helpers

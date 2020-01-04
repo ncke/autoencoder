@@ -21,8 +21,9 @@ public:
     // Connection.
     void fullyConnect(Layer &forwardLayer);
     
-    // Activation.
-    void activate();
+    // Getters.
+    Neuron getNeuron(size_t index) const;
+    std::vector<Neuron> getNeurons() const;
     
     // Helpers.
     void describe() const;

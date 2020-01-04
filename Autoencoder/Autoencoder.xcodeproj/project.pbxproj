@@ -15,6 +15,7 @@
 		01116BBF23C0C91A00255C4C /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BBD23C0C91A00255C4C /* Layer.cpp */; };
 		01116BC223C0E80500255C4C /* Mathematics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BC023C0E80500255C4C /* Mathematics.cpp */; };
 		01116BC523C0F86000255C4C /* NeuralNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BC323C0F86000255C4C /* NeuralNetwork.cpp */; };
+		01116BC923C0FB3800255C4C /* NeuronHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BC723C0FB3800255C4C /* NeuronHandle.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,8 @@
 		01116BC123C0E80500255C4C /* Mathematics.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mathematics.hpp; sourceTree = "<group>"; };
 		01116BC323C0F86000255C4C /* NeuralNetwork.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NeuralNetwork.cpp; sourceTree = "<group>"; };
 		01116BC423C0F86000255C4C /* NeuralNetwork.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NeuralNetwork.hpp; sourceTree = "<group>"; };
+		01116BC723C0FB3800255C4C /* NeuronHandle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NeuronHandle.cpp; sourceTree = "<group>"; };
+		01116BC823C0FB3800255C4C /* NeuronHandle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NeuronHandle.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,8 @@
 				01116BBD23C0C91A00255C4C /* Layer.cpp */,
 				01116BB523BCA9AD00255C4C /* Neuron.hpp */,
 				01116BB423BCA9AD00255C4C /* Neuron.cpp */,
+				01116BC823C0FB3800255C4C /* NeuronHandle.hpp */,
+				01116BC723C0FB3800255C4C /* NeuronHandle.cpp */,
 				01116BB823BCAEAD00255C4C /* Connections.hpp */,
 				01116BB723BCAEAD00255C4C /* Connections.cpp */,
 				01116BBB23BCB29A00255C4C /* Randomization.hpp */,
@@ -177,6 +182,7 @@
 				01116BBF23C0C91A00255C4C /* Layer.cpp in Sources */,
 				01116BB923BCAEAD00255C4C /* Connections.cpp in Sources */,
 				01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */,
+				01116BC923C0FB3800255C4C /* NeuronHandle.cpp in Sources */,
 				01116BC223C0E80500255C4C /* Mathematics.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

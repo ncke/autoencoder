@@ -7,6 +7,8 @@
 //
 
 #include "NeuralNetwork.hpp"
+#include "Neuron.hpp"
+#include "NeuronHandle.hpp"
 #include <vector>
 
 using namespace std;
@@ -24,6 +26,14 @@ NeuralNetwork::NeuralNetwork(const vector<int>& architecture) {
     for (size_t layerIndex{ 1 }; layerIndex < architecture.size(); ++layerIndex) {
         m_layers[layerIndex - 1].fullyConnect(m_layers[layerIndex]);
     }
+}
+
+// MARK: - Activation
+
+// MARK: - Getters
+
+Neuron NeuralNetwork::getNeuron(NeuronHandle& handle) const {
+    return m_layers[handle.layerIndex].getNeuron(handle.neuronIndex);
 }
 
 // MARK: - Helpers

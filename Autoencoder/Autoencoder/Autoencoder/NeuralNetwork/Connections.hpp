@@ -9,22 +9,13 @@
 #ifndef Connections_hpp
 #define Connections_hpp
 
+#include "NeuronHandle.hpp"
 #include <vector>
-
-struct NeuronHandle {
-    size_t layerIndex;
-    size_t neuronIndex;
-    
-    bool operator==(const NeuronHandle &other) const {
-        return this->layerIndex == other.layerIndex && this->neuronIndex == other.neuronIndex;
-    }
-};
 
 class Neuron;
 
 struct Connection {
     NeuronHandle handle;
-    
     Connection(const Neuron& otherNeuron);
     
     bool operator==(const Connection &other) const {
@@ -34,13 +25,13 @@ struct Connection {
 
 struct WeightedConnection : Connection {
     double weight;
-    
     WeightedConnection(const Neuron& otherNeuron);
 };
 
 class Connections {
     
 public:
+    // Making connections.
     void connectInput(const Neuron& otherNeuron);
     void connectOutput(const Neuron& otherNeuron);
     

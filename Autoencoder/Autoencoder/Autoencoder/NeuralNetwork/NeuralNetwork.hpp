@@ -12,16 +12,23 @@
 #include "Layer.hpp"
 #include <vector>
 
+class Neuron;
+struct NeuronHandle;
+
 class NeuralNetwork {
     
 public:
     NeuralNetwork(const std::vector<int>& architecture);
+    
+    // Activation.
     
     // Helpers.
     void describe() const;
     
 private:
     std::vector<Layer> m_layers;
+    double totalInput(Neuron& neuron) const;
+    Neuron getNeuron(NeuronHandle& handle) const;
 };
 
 #endif /* NeuralNetwork_hpp */
