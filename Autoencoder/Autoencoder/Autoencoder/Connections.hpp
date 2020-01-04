@@ -9,33 +9,49 @@
 #ifndef Connections_hpp
 #define Connections_hpp
 
-#include "Neuron.hpp"
 #include <vector>
 
+struct NeuronHandle {
+    size_t layerIndex;
+    size_t neuronIndex;
+    
+    bool operator==(const NeuronHandle &other) const {
+        return this->layerIndex == other.layerIndex && this->neuronIndex == other.neuronIndex;
+    }
+};
+
+class Neuron;
+
 struct Connection {
-    NeuronHandle originHandle;
-    NeuronHandle destinationHandle;
-    double weight;
+    NeuronHandle handle;
+    
+    Connection(const Neuron& otherNeuron);
     
     bool operator==(const Connection &other) const {
-        return this->originHandle == other.originHandle && this->destinationHandle == other.destinationHandle;
+        return this->handle == other.handle;
     }
+};
+
+struct WeightedConnection : Connection {
+    double weight;
+    
+    WeightedConnection(const Neuron& otherNeuron);
 };
 
 class Connections {
     
 public:
-    void connectInput(const Neuron& input);
-    void connectOutput(const Neuron& origin, const Neuron& destination);
+    void connectInput(const Neuron& otherNeuron);
+    void connectOutput(const Neuron& otherNeuron);
     
     // Helpers.
     void describe() const;
     
 private:
-    std::vector<NeuronHandle> m_inputs;
-    std::vector<Connection> m_outputs;
-    bool inputExists(const NeuronHandle& inputHandle) const ;
-    bool outputExists(const Connection& outputConnection) const;
+    std::vector<Connection> m_inputs;
+    std::vector<WeightedConnection> m_outputs;
+    bool exists(const Connection& connection, const std::vector<Connection>connections) const;
+    bool exists(const Connection& connection, const std::vector<WeightedConnection>connections) const;
 };
 
 #endif /* Connections_hpp */

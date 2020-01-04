@@ -19,13 +19,21 @@ Layer::Layer(size_t layerIndex, size_t neuronCount) {
     }
 }
 
+// MARK: - Connection
+
 void Layer::fullyConnect(Layer &forwardLayer) {
-    for (auto origin : m_neurons) {
-        for (auto destination : forwardLayer.m_neurons) {
-            m_connections.connectOutput(origin, destination);
-            forwardLayer.m_connections.connectInput(origin);
+    for (auto& origin : m_neurons) {
+        for (auto& destination : forwardLayer.m_neurons) {
+            origin.connectOutput(destination);
+            destination.connectInput(origin);
         }
     }
+}
+
+// MARK: - Activation
+
+void Layer::activate() {
+    
 }
 
 // MARK: - Helpers
@@ -35,6 +43,4 @@ void Layer::describe() const {
     for (auto neuron : m_neurons) {
         neuron.describe();
     }
-    
-    m_connections.describe();
 }

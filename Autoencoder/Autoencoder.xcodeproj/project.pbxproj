@@ -13,6 +13,7 @@
 		01116BB923BCAEAD00255C4C /* Connections.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BB723BCAEAD00255C4C /* Connections.cpp */; };
 		01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BBA23BCB29A00255C4C /* Randomization.cpp */; };
 		01116BBF23C0C91A00255C4C /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BBD23C0C91A00255C4C /* Layer.cpp */; };
+		01116BC223C0E80500255C4C /* Mathematics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BC023C0E80500255C4C /* Mathematics.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -40,6 +41,8 @@
 		01116BBB23BCB29A00255C4C /* Randomization.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Randomization.hpp; sourceTree = "<group>"; };
 		01116BBD23C0C91A00255C4C /* Layer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer.cpp; sourceTree = "<group>"; };
 		01116BBE23C0C91A00255C4C /* Layer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer.hpp; sourceTree = "<group>"; };
+		01116BC023C0E80500255C4C /* Mathematics.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mathematics.cpp; sourceTree = "<group>"; };
+		01116BC123C0E80500255C4C /* Mathematics.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mathematics.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,8 @@
 				01116BB723BCAEAD00255C4C /* Connections.cpp */,
 				01116BBB23BCB29A00255C4C /* Randomization.hpp */,
 				01116BBA23BCB29A00255C4C /* Randomization.cpp */,
+				01116BC023C0E80500255C4C /* Mathematics.cpp */,
+				01116BC123C0E80500255C4C /* Mathematics.hpp */,
 			);
 			path = Autoencoder;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				01116BBF23C0C91A00255C4C /* Layer.cpp in Sources */,
 				01116BB923BCAEAD00255C4C /* Connections.cpp in Sources */,
 				01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */,
+				01116BC223C0E80500255C4C /* Mathematics.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

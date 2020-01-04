@@ -14,33 +14,35 @@
 
 using namespace std;
 
+Connection::Connection(const Neuron& otherNeuron) : handle{ otherNeuron.getHandle() } {}
+
+WeightedConnection::WeightedConnection(const Neuron& otherNeuron) :
+    Connection(otherNeuron), weight{ randomization(-1.0, 1.0) } {}
+
 // MARK: - Connect neurons
 
-void Connections::connectInput(const Neuron& input) {
-    NeuronHandle inputHandle = input.getHandle();
+void Connections::connectInput(const Neuron& otherNeuron) {
+    Connection connection{ otherNeuron };
     
-    if (!inputExists(inputHandle)) {
-        m_inputs.emplace_back(inputHandle);
+    if (!exists(connection, m_inputs)) {
+        m_inputs.emplace_back(connection);
     }
 }
 
-void Connections::connectOutput(const Neuron& origin, const Neuron& destination) {
+void Connections::connectOutput(const Neuron& otherNeuron) {
     // Create the connection.
-    Connection connection{
-        origin.getHandle(),
-        destination.getHandle(),
-        randomization(-1.0, 1.0) };
+    WeightedConnection connection{ otherNeuron };
     
-    if (!outputExists(connection)) {
+    if (!exists(connection, m_outputs)) {
         m_outputs.emplace_back(connection);
     }
 }
 
 // MARK: - Connection Uniquing
 
-bool Connections::inputExists(const NeuronHandle& inputHandle) const {
-    for (auto existingHandle : m_inputs) {
-        if (inputHandle == existingHandle) {
+bool Connections::exists(const Connection& connection, const std::vector<Connection>connections) const {
+    for (auto existingConnection : connections) {
+        if (connection == existingConnection) {
             return true;
         }
     }
@@ -48,9 +50,9 @@ bool Connections::inputExists(const NeuronHandle& inputHandle) const {
     return false;
 }
 
-bool Connections::outputExists(const Connection& outputConnection) const {
-    for (auto existingConnection : m_outputs) {
-        if (outputConnection == existingConnection) {
+bool Connections::exists(const Connection& connection, const std::vector<WeightedConnection>connections) const {
+    for (auto existingConnection : connections) {
+        if (connection == existingConnection) {
             return true;
         }
     }
@@ -62,20 +64,18 @@ bool Connections::outputExists(const Connection& outputConnection) const {
 
 void Connections::describe() const {
     cout << "input connections (count: " << m_inputs.size() << ")" << endl;
-    for (auto handle: m_inputs) {
+    for (auto connection: m_inputs) {
         cout << "input: "
-             << "(" << handle.layerIndex
-             << "," << handle.neuronIndex << ")" << endl;
+             << "(" << connection.handle.layerIndex
+             << "," << connection.handle.neuronIndex << ")"
+             << endl;
     }
     
     cout << "output connections (count: " << m_outputs.size() << ")" << endl;
     for (auto connection: m_outputs) {
-        cout << "connection: "
-             << "(" << connection.originHandle.layerIndex
-             << "," << connection.originHandle.neuronIndex << ")"
-             << " --> "
-             << "(" << connection.destinationHandle.layerIndex
-             << "," << connection.destinationHandle.neuronIndex << "), "
+        cout << "output: "
+             << "(" << connection.handle.layerIndex
+             << "," << connection.handle.neuronIndex << ") "
              << "weight: " << connection.weight
              << endl;
     }

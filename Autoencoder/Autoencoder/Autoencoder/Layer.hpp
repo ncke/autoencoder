@@ -21,12 +21,14 @@ public:
     // Connection.
     void fullyConnect(Layer &forwardLayer);
     
+    // Activation.
+    void activate();
+    
     // Helpers.
     void describe() const;
     
 private:
     std::vector<Neuron> m_neurons;
-    Connections m_connections;
 };
 
 #endif /* Layer_hpp */
