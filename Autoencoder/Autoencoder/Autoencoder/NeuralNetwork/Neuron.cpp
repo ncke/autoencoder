@@ -36,17 +36,26 @@ void Neuron::activate(NeuralNetwork& neuralNetwork) {
     }
     
     // Compute the activation.
+    m_totalInput = total;
     m_activation = sigmoid(total);
 }
 
-// MARK: - Getters
+// MARK: - Getters and Setters
 
 NeuronHandle Neuron::getHandle() const {
     return m_handle;
 }
 
+double Neuron::getTotalInput() const {
+    return m_totalInput;
+}
+
 double Neuron::getActivation() const {
     return m_activation;
+}
+
+void Neuron::setActivation(double activation) {
+    m_activation = activation;
 }
 
 // MARK: - Helpers

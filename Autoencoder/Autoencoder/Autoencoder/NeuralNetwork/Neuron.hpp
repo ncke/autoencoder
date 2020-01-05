@@ -28,9 +28,11 @@ public:
     // Activation.
     void activate(NeuralNetwork& neuralNetwork);
     
-    // Getters.
+    // Getters and Setters.
     NeuronHandle getHandle() const;
+    double getTotalInput() const;
     double getActivation() const;
+    void setActivation(double activation);
 
     // Helpers.
     void describe() const;
@@ -39,6 +41,7 @@ private:
     Connections m_connections;
     NeuronHandle m_handle;
     double m_bias;
+    double m_totalInput;
     double m_activation;
 };
 

@@ -23,6 +23,12 @@ public:
     // Connection.
     void fullyConnect(Layer &forwardLayer);
     
+    // Training.
+    void loadInputs(const std::vector<double>& inputs);
+    std::vector<double> getInputs() const;
+    std::vector<double> getOutputs() const;
+    std::vector<double> computeOutputDeltas() const;
+    
     // Activation.
     void activate(NeuralNetwork& neuralNetwork);
     

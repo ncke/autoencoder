@@ -6,6 +6,7 @@
 //  Copyright © 2020 Nick. All rights reserved.
 //
 
+#include "Mathematics.hpp"
 #include "NeuralNetwork.hpp"
 #include "Neuron.hpp"
 #include "NeuronHandle.hpp"
@@ -28,12 +29,44 @@ NeuralNetwork::NeuralNetwork(const vector<int>& architecture) {
     }
 }
 
+// MARK: - Training
+
+void NeuralNetwork::train(const std::vector<double>& inputs, const std::vector<double>& ideal) {
+    loadInputs(inputs);
+    activate();
+    vector<double> outputs = getOutputs();
+    double error = computeError(ideal, outputs);
+    
+    
+    
+}
+
+void NeuralNetwork::loadInputs(const std::vector<double>& inputs) {
+    m_layers[0].loadInputs(inputs);
+}
+
+const vector<double> NeuralNetwork::getOutputs() const {
+    return m_layers[m_layers.size() - 1].getOutputs();
+}
+
+double NeuralNetwork::computeError(const std::vector<double>& ideal, const std::vector<double>& actual) const {
+    // Sum of squares error function.
+    double error = 0.0;
+    
+    for (auto i{ 0 }; i < ideal.size(); ++i) {
+        double diff = actual[i] - ideal[i];
+        error += (diff * diff);
+    }
+    
+    return error;
+}
+
 // MARK: - Activation
 
 void NeuralNetwork::activate() {
-    // Activate each layer.
-    for (auto& layer : m_layers) {
-        layer.activate(*this);
+    // Activate each layer, except the first (input) layer.
+    for (auto i{ 1 }; i < m_layers.size(); ++i) {
+        m_layers[i].activate(*this);
     }
 }
 

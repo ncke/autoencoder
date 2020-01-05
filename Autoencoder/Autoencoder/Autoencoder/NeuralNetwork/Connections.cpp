@@ -57,7 +57,8 @@ void Connections::describe() const {
     for (auto connection: m_inputs) {
         cout << "input: "
              << "(" << connection.handle.layerIndex
-             << "," << connection.handle.neuronIndex << ")"
+             << "," << connection.handle.neuronIndex << ") "
+             << "weight: " << connection.weight
              << endl;
     }
 }

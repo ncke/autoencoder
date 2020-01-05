@@ -20,6 +20,9 @@ class NeuralNetwork {
 public:
     NeuralNetwork(const std::vector<int>& architecture);
     
+    // Training.
+    void train(const std::vector<double>& inputs, const std::vector<double>& ideal);
+    
     // Activation.
     void activate();
     double getActivation(const NeuronHandle& handle) const;
@@ -31,6 +34,9 @@ private:
     std::vector<Layer> m_layers;
     double totalInput(Neuron& neuron) const;
     Neuron getNeuron(const NeuronHandle& handle) const;
+    void loadInputs(const std::vector<double>& inputs);
+    const std::vector<double> getOutputs() const;
+    double computeError(const std::vector<double>& ideal, const std::vector<double>& actual) const;
 };
 
 #endif /* NeuralNetwork_hpp */

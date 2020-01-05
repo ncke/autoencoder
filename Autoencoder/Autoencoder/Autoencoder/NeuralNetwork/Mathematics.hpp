@@ -16,4 +16,9 @@ inline double sigmoid(double x) {
     return ex / (1.0 + ex);
 }
 
+inline double derivativeSigmoid(double x) {
+    double xSigmoid = sigmoid(x);
+    return xSigmoid * (1.0 - xSigmoid);
+}
+
 #endif /* Mathematics_hpp */

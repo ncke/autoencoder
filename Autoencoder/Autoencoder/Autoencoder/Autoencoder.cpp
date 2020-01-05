@@ -14,10 +14,7 @@ using namespace std;
 
 // MARK: - Initialisation
 
-Autoencoder::Autoencoder(const vector<int>& architecture) : m_network{ architecture } {
-    // Create the neural network.
-    
-}
+Autoencoder::Autoencoder(const vector<int>& architecture) : m_network{ architecture } {}
 
 // MARK: - Helpers
 

@@ -15,7 +15,7 @@ struct NeuronHandle {
     size_t layerIndex;
     size_t neuronIndex;
     
-    bool operator==(const NeuronHandle &other) const {
+    inline bool operator==(const NeuronHandle &other) const {
         return this->layerIndex == other.layerIndex && this->neuronIndex == other.neuronIndex;
     }
 };
