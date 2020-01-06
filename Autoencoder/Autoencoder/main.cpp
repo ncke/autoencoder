@@ -14,9 +14,9 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     
-    // Simple autoencoder.
-    vector<int> architecture = { 3, 2, 3 };
+    vector<int> layerSizes = { 3, 2, 3 };
+    Architecture architecture{ layerSizes };
+    
     Autoencoder autoencoder = Autoencoder(architecture);
     
-    autoencoder.describe();
 }

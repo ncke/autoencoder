@@ -7,17 +7,10 @@
 //
 
 #include "Autoencoder.hpp"
-#include "Layer.hpp"
 #include <iostream>
 
 using namespace std;
 
 // MARK: - Initialisation
 
-Autoencoder::Autoencoder(const vector<int>& architecture) : m_network{ architecture } {}
-
-// MARK: - Helpers
-
-void Autoencoder::describe() const {
-    m_network.describe();
-}
+Autoencoder::Autoencoder(Architecture architecture) : m_network{ architecture } {}

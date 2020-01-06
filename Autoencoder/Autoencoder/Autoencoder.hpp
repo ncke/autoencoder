@@ -10,13 +10,12 @@
 #define Autoencoder_hpp
 
 #include "NeuralNetwork.hpp"
-#include <stdio.h>
 #include <vector>
 
 class Autoencoder {
 
 public:
-    Autoencoder(const std::vector<int>& architecture);
+    Autoencoder(Architecture architecture);
     
     // Helpers.
     void describe() const;
