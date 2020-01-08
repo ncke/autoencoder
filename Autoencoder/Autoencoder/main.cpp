@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <vector>
+#include "Architecture.hpp"
 #include "Autoencoder.hpp"
 
 using namespace std;

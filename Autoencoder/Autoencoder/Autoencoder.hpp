@@ -9,6 +9,7 @@
 #ifndef Autoencoder_hpp
 #define Autoencoder_hpp
 
+#include "Architecture.hpp"
 #include "NeuralNetwork.hpp"
 #include <vector>
 
@@ -16,9 +17,6 @@ class Autoencoder {
 
 public:
     Autoencoder(Architecture architecture);
-    
-    // Helpers.
-    void describe() const;
 
 private:
     NeuralNetwork m_network;

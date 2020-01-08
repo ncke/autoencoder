@@ -11,9 +11,8 @@
 		01116BB223BCA56D00255C4C /* Autoencoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BB023BCA56D00255C4C /* Autoencoder.cpp */; };
 		01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 01116BBA23BCB29A00255C4C /* Randomization.cpp */; };
 		016AADE623C2921F00E651E2 /* NeuralNetwork.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016AADE423C2921F00E651E2 /* NeuralNetwork.cpp */; };
-		016AADE923C2933B00E651E2 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016AADE723C2933B00E651E2 /* Node.cpp */; };
-		016AADEC23C2935500E651E2 /* Connections.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016AADEA23C2935500E651E2 /* Connections.cpp */; };
-		016AADEF23C29C1E00E651E2 /* Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016AADED23C29C1E00E651E2 /* Layer.cpp */; };
+		016AADF223C5110D00E651E2 /* Nodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016AADF023C5110D00E651E2 /* Nodes.cpp */; };
+		016AADF523C5114F00E651E2 /* Architecture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 016AADF323C5114F00E651E2 /* Architecture.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,12 +36,10 @@
 		01116BBB23BCB29A00255C4C /* Randomization.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Randomization.hpp; sourceTree = "<group>"; };
 		016AADE423C2921F00E651E2 /* NeuralNetwork.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NeuralNetwork.cpp; sourceTree = "<group>"; };
 		016AADE523C2921F00E651E2 /* NeuralNetwork.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NeuralNetwork.hpp; sourceTree = "<group>"; };
-		016AADE723C2933B00E651E2 /* Node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
-		016AADE823C2933B00E651E2 /* Node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Node.hpp; sourceTree = "<group>"; };
-		016AADEA23C2935500E651E2 /* Connections.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Connections.cpp; sourceTree = "<group>"; };
-		016AADEB23C2935500E651E2 /* Connections.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Connections.hpp; sourceTree = "<group>"; };
-		016AADED23C29C1E00E651E2 /* Layer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Layer.cpp; sourceTree = "<group>"; };
-		016AADEE23C29C1E00E651E2 /* Layer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Layer.hpp; sourceTree = "<group>"; };
+		016AADF023C5110D00E651E2 /* Nodes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Nodes.cpp; sourceTree = "<group>"; };
+		016AADF123C5110D00E651E2 /* Nodes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Nodes.hpp; sourceTree = "<group>"; };
+		016AADF323C5114F00E651E2 /* Architecture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Architecture.cpp; sourceTree = "<group>"; };
+		016AADF423C5114F00E651E2 /* Architecture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Architecture.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,12 +85,10 @@
 			children = (
 				016AADE523C2921F00E651E2 /* NeuralNetwork.hpp */,
 				016AADE423C2921F00E651E2 /* NeuralNetwork.cpp */,
-				016AADEE23C29C1E00E651E2 /* Layer.hpp */,
-				016AADED23C29C1E00E651E2 /* Layer.cpp */,
-				016AADE823C2933B00E651E2 /* Node.hpp */,
-				016AADE723C2933B00E651E2 /* Node.cpp */,
-				016AADEB23C2935500E651E2 /* Connections.hpp */,
-				016AADEA23C2935500E651E2 /* Connections.cpp */,
+				016AADF123C5110D00E651E2 /* Nodes.hpp */,
+				016AADF023C5110D00E651E2 /* Nodes.cpp */,
+				016AADF423C5114F00E651E2 /* Architecture.hpp */,
+				016AADF323C5114F00E651E2 /* Architecture.cpp */,
 				01116BBB23BCB29A00255C4C /* Randomization.hpp */,
 				01116BBA23BCB29A00255C4C /* Randomization.cpp */,
 			);
@@ -159,11 +154,10 @@
 			files = (
 				01116BAA23BCA34200255C4C /* main.cpp in Sources */,
 				01116BB223BCA56D00255C4C /* Autoencoder.cpp in Sources */,
+				016AADF523C5114F00E651E2 /* Architecture.cpp in Sources */,
 				01116BBC23BCB29A00255C4C /* Randomization.cpp in Sources */,
+				016AADF223C5110D00E651E2 /* Nodes.cpp in Sources */,
 				016AADE623C2921F00E651E2 /* NeuralNetwork.cpp in Sources */,
-				016AADE923C2933B00E651E2 /* Node.cpp in Sources */,
-				016AADEF23C29C1E00E651E2 /* Layer.cpp in Sources */,
-				016AADEC23C2935500E651E2 /* Connections.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
