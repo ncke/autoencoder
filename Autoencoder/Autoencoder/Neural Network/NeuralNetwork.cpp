@@ -9,3 +9,6 @@
 #include "NeuralNetwork.hpp"
 #include "Randomization.hpp"
 
+void NeuralNetwork::describe() {
+    m_nodes.describe();
+}

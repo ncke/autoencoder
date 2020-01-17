@@ -17,6 +17,8 @@ class NeuralNetwork {
 public:
     NeuralNetwork(Architecture architecture) : m_nodes{architecture} {};
 
+    void describe();
+    
 private:
     Nodes m_nodes;
 };

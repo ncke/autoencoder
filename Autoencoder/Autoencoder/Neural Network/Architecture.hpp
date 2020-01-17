@@ -13,6 +13,7 @@
 
 struct Architecture {
     std::vector<int> layerSizes;
+    bool useBias;
     
     size_t nodeCount() const {
         size_t total = 0;

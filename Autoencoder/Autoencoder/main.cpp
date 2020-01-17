@@ -16,7 +16,9 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     
     vector<int> layerSizes = { 3, 2, 3 };
-    Architecture architecture{ layerSizes };
+    bool useBias = true;
+    
+    Architecture architecture{ layerSizes, useBias };
     
     Autoencoder autoencoder = Autoencoder(architecture);
     

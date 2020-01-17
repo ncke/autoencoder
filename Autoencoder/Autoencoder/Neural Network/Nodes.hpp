@@ -34,10 +34,13 @@ public:
     Nodes(Architecture architecture);
     std::vector<double> activate(std::vector<double> inputs);
     
+    void describe();
+    
 private:
     std::vector<Node> m_nodes;
     std::vector<std::vector<size_t>> m_layers;
     void connect(size_t origin, size_t destination);
+    void connectBias(size_t destination);
     void computeInput(Node& node);
     void computeOutput(Node& node);
 };

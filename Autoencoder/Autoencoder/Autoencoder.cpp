@@ -13,4 +13,4 @@ using namespace std;
 
 // MARK: - Initialisation
 
-Autoencoder::Autoencoder(Architecture architecture) : m_network{ architecture } {}
+Autoencoder::Autoencoder(Architecture architecture) : m_network{ architecture } { m_network.describe(); }
