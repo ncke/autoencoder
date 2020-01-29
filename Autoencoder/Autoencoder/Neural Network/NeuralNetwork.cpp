@@ -9,6 +9,10 @@
 #include "NeuralNetwork.hpp"
 #include "Randomization.hpp"
 
+std::vector<double> NeuralNetwork::activate(std::vector<double> inputs) {
+    return m_nodes.activate(inputs);
+}
+
 void NeuralNetwork::describe() {
     m_nodes.describe();
 }

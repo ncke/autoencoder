@@ -17,6 +17,8 @@ class NeuralNetwork {
 public:
     NeuralNetwork(Architecture architecture) : m_nodes{architecture} {};
 
+    std::vector<double> activate(std::vector<double> inputs);
+    
     void describe();
     
 private:
