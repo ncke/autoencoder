@@ -21,7 +21,16 @@ public:
     ~NeuralNetwork() {}
     
 private:
+    // Architecture to serial conversion.
+    int serialize_node(int layer, int node);
+    int serialize_conn(int layer, int node, int dest);
+    
+    // Architecture model.
+    std::vector<int> node_cumulations;
+    std::vector<int> conn_cumulations;
     std::vector<int> layer_sizes;
+    
+    // Serialized network model.
     std::vector<double> inputs;
     std::vector<double> activations;
     std::vector<double> connections;
